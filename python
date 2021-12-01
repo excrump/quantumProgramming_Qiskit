@@ -1,0 +1,15 @@
+satirKayit = QuantumRegister(m)  
+2. sutunKayit = QuantumRegister(n)  
+3. cKayit = ClassicalRegister(n+m)  
+4.   
+5. devre = QuantumCircuit(satirKayit, sutunKayit, cKayit)  
+6. devre.initialize()  
+7. qft(m).construct_circuit(qubits=satirKayit,circuit=devre)  
+8. qft(n).construct_circuit(qubits=sutunKayit,circuit=devre)  
+9. devre.measure()  
+10.   
+11. provider = IBMQ.get_provider(group=&#39;open&#39;)  
+12. backend = provider.get_backend(&#39;ibmq_qasm_simulator&#39;)  
+13.   
+14. boyut = 15  
+15. result = execute(circuit=devre, backend, shots=boyut).result()

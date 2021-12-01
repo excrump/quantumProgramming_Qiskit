@@ -8,8 +8,8 @@ qft(m).construct_circuit(qubits=satirKayit,circuit=devre)  
 qft(n).construct_circuit(qubits=sutunKayit,circuit=devre)  
 devre.measure()  
 
-provider = IBMQ.get_provider(group=&#39;open&#39;)  
-backend = provider.get_backend(&#39;ibmq_qasm_simulator&#39;)  
+provider = IBMQ.get_provider(group='open')  
+backend = provider.get_backend('ibmq_qasm_simulator')  
    
 boyut = 15  
 result = execute(circuit=devre, backend, shots=boyut).result()

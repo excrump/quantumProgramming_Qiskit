@@ -29,10 +29,17 @@ def qubitInitialize(circuit, quantumRegister):  
     circuit.h(q[0])  
     circuit.h(q[1])  
     circuit.h(q[1])
+    
 def yol(circuit, alt, ust, sonuc):  
     circuit.ry(np.pi/2, sonuc)  
     circuit.ccx(alt, ust, sonuc)  
     circuit.ry(-np.pi/2, sonuc)
+    
+def yolSecim(circuit, alt, ust, sonuc):  
+    def yol(circuit, alt, ust, sonuc):  
+        circuit.ry(np.pi/2, sonuc)  
+        circuit.ccx(alt, ust, sonuc)  
+        circuit.ry(-np.pi/2, sonuc)
     
 yolSecim(circuit, alt, ust, sonuc)  
 
